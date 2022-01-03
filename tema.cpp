@@ -1,4 +1,3 @@
-
 #include<iostream>
 
 class defaultConstructorClass
@@ -17,24 +16,24 @@ public:
         weight(w),
         price(p)
    {
-       std::cout<<"Fruit constructor\n";                        
-   }                        
+       //std::cout<<"Fruit constructor\n";
+   }
    fruit(const fruit &f):
    weight(f.weight),
    price(f.price)
    {
-       std::cout<<"Fruit copy-constructor\n";
-   
+       //std::cout<<"Fruit copy-constructor\n";
+
    }
    fruit& operator=(const fruit &f)
    {
-       std::cout<<"Fruit assignment\n";
+       //std::cout<<"Fruit assignment\n";
        this->weight=f.weight;
        this->price=f.price;
                return *this;
    }
      ~fruit(){
-         std::cout<<"Fruit destructor\n";
+         //std::cout<<"Fruit destructor\n";
      }
     int getWeight() {
         return weight;
@@ -51,28 +50,31 @@ public:
     apple(int w, double p, int t): fruit(w,p),
         type(t)
     {
-        std::cout<<"Apple constructor\n";
+        //std::cout<<"Apple constructor\n";
     }
     ~apple();
     apple(const apple &a):
     fruit(a),
     type(a.type)
     {
-       std::cout<<"Apple copy-constructor\n";
+       //std::cout<<"Apple copy-constructor\n";
    }
    apple& operator=(const apple &a){
        fruit::operator=(a);
-       std::cout<<"Apple assignment\n";
-       this->type=a.type;
+       //std::cout<<"Apple assignment\n";
+       //this->type=a.type;
                return *this;
    }
-    
+   int getType(){
+       return type;
+   }
+
 };
 
 
 apple::~apple()
 {
-    std::cout<<"Apple destructor\n";
+    //std::cout<<"Apple destructor\n";
 }
 
 class vegetable
@@ -80,24 +82,24 @@ class vegetable
     private:
         int weight;
         double price;
-        
+
     public:
     vegetable(int w, double p):
             weight(w),
             price(p)
     {
-        std::cout<<"Fruit constructor\n";                        
-    };                 
+        //std::cout<<"Fruit constructor\n";
+    };
         vegetable(){
 
         }
-      
+
         ~vegetable(){
-            std::cout<<"Vegetable destructor\n";
+            //std::cout<<"Vegetable destructor\n";
         }
     private:
          vegetable(const vegetable &v);
-  
+
          vegetable& operator=(const vegetable &v);
 };
 
@@ -109,12 +111,12 @@ public:
     tomato(int w, double p, int t): vegetable(w,p),
         type(t)
     {
-        std::cout<<"Tomato constructor\n";
+        //std::cout<<"Tomato constructor\n";
     }
      ~tomato(){
-            std::cout<<"Tomato destructor\n";
+            //std::cout<<"Tomato destructor\n";
         }
-    
+
 };
 
 
@@ -141,7 +143,7 @@ int main(){
     a1=a2; //fruit assignment, apple assignment
     f2=f1; //fruit assignment
     f2=a2; //fruit assignment
-    
+
     tomato t1(1,2,3);
     vegetable v1(1,2);
 
@@ -151,6 +153,24 @@ int main(){
     vegetable v2(v1);
     v2=v1;
     */
+
+   //tema2
+   //item10
+    fruit fruit1(2,3);
+    fruit fruit2(1,1);
+    fruit fruit3(5,4);
+    fruit1=fruit2=fruit3;
+    std::cout<<"\n"<<fruit1.getWeight()<<"\n";
+
+
+    //item11->verificare cu if in assignment op. fruit
+
+    //item12 ->stergere schimbare type din assignment
+    //apple2 nu ma avea tipul schimbat
+    apple apple1(1,2,4);
+    apple apple2(7,9,3);
+    apple2=apple1;
+    std::cout<<"\n"<<apple2.getType();
 
 
     //finally destructors for all objects created
