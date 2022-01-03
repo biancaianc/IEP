@@ -1,0 +1,3 @@
+/home/bia/Desktop/tema_s4-20211124T095647Z-001/tema_s4/build/CMakeFiles/rebuild_cache.dir
+/home/bia/Desktop/tema_s4-20211124T095647Z-001/tema_s4/build/CMakeFiles/edit_cache.dir
+/home/bia/Desktop/tema_s4-20211124T095647Z-001/tema_s4/build/CMakeFiles/Tema_S4.dir
